@@ -22,3 +22,36 @@ Construct a special protocol header through rawsocket to send the cpu utilizatio
 
 ## topology
 We use mininet to build a virtual network test platform. We set up five hosts and a switch, isolating a CPU for each host and assigning it a switch port. After starting the topology, host 5 sends packets, and bmv2 distributes traffic to hosts 1 to 4.
+
+## How to run
+First, enter the root direction of the system.
+```
+cd P4RSS
+```
+Generate P4 switch configuration file.
+```
+cd p4_code
+sh run.sh
+```
+Generate send and receive package file.
+```
+cd packet
+sh run.sh
+```
+Start the topology and enter the CLI of Mininet.
+```
+sudo python topo.py
+```
+Start the host terminal.
+```
+xterm [host]
+```
+Start sending load-aware packets on the cpu side
+```
+cd packet && ./h1_send_cpuu
+```
+Start sending ipv4 packets
+```
+cd packet && ./send_ipv4
+```
+Then you can see the real-time utilization of each core and the receipt of packets on each core.
