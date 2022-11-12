@@ -1,3 +1,8 @@
+mkdir recv_1
+mkdir recv_2
+mkdir recv_3
+mkdir recv_4
+
 g++ recv.cpp -o ./recv_1/recv11
 g++ recv.cpp -o ./recv_1/recv12
 g++ recv.cpp -o ./recv_1/recv13
@@ -19,3 +24,5 @@ g++ h1_send_cpuu.cpp -o h1_send_cpuu
 g++ h2_send_cpuu.cpp -o h2_send_cpuu
 g++ h3_send_cpuu.cpp -o h3_send_cpuu
 g++ h4_send_cpuu.cpp -o h4_send_cpuu
+
+g++ send_ipv4.cpp -o send_ipv4
